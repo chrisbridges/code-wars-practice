@@ -1,37 +1,36 @@
 //return the total number of smiling faces in the array
 function countSmileys(arr) {
-  // create data array of all valid smileys
-    const validSmileys = [];
-  //   loops through each validSmiley to see if current arg value is equal to a valid
-  //     doesn't scale particularly well if need to add more smileys
+
+  let counter = 0
   
-  // using Regex
-  //   see if first character is valid 'eyes' - ":" or ";"
-    //   check if nose is present - "-" or "~"
-    //   if it is, next char must be mouth - ")" or "D"
-    
-  // if eyes
-  //   if nose
-  //     if mouth
-  //   if mouth
-  // DRY mouth logic
-  
-  // I can't seem to figure out the Regex, can I just use Char Codes?
-  // Create hash map for all valid charcodes for eyes, noses, mouths?
   const validSmileysHash = {
     eyes: [58, 59],
     nose: [45, 126],
     mouth: [41, 68]
   }
   
-  function hasValidEyes (eyes) {
-    for (let i of validSmileysHash.eyes) {
-      if (eyes === i) {
+  function hasValidSmileyAttr (attrCharCode, validValues) {
+    for (let i of validValues) {
+      if (attrCharCode === i) {
         return true
       }
     }
     return false
   }
-  // could DRY this even further, make a function that takes in hash array and value to be checked
   
-  }
+  arr.forEach(smiley => {
+  //check for valid eyes
+    if (hasValidSmileyAttr(smiley.charCodeAt(0), validSmileysHash.eyes)) {
+  //  check for valid nose && mouth
+      if (hasValidSmileyAttr(smiley.charCodeAt(1), validSmileysHash.nose) && hasValidSmileyAttr(smiley.charCodeAt(2), validSmileysHash.mouth)) {
+        counter++
+      } 
+  //  check for valid mouth
+      else if (hasValidSmileyAttr(smiley.charCodeAt(1), validSmileysHash.mouth)) {
+        counter++
+      }
+    }
+  })
+  
+  return counter
+}
