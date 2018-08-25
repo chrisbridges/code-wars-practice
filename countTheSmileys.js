@@ -34,3 +34,8 @@ function countSmileys(arr) {
   
   return counter
 }
+
+// recommended solution is pretty sweet
+function countSmileys(arr) {
+  return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+}
