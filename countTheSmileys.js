@@ -39,3 +39,4 @@ function countSmileys(arr) {
 function countSmileys(arr) {
   return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
 }
+// worth noting that the recommended function performs about 15% faster than my solution
