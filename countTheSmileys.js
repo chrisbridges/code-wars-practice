@@ -24,4 +24,14 @@ function countSmileys(arr) {
     mouth: [41, 68]
   }
   
+  function hasValidEyes (eyes) {
+    for (let i of validSmileysHash.eyes) {
+      if (eyes === i) {
+        return true
+      }
+    }
+    return false
+  }
+  // could DRY this even further, make a function that takes in hash array and value to be checked
+  
   }
