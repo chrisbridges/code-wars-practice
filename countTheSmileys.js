@@ -19,8 +19,6 @@
 
 // Note: In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same
 
-
-/return the total number of smiling faces in the array
 function countSmileys(arr) {
 
   let counter = 0
