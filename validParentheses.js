@@ -22,3 +22,16 @@ function validParentheses(parens){
 // replace will look through the string to find any match of the first arg - '()'
 // if the parens are valid, eventually, no matter how nested they may be two parens will match the arg
 // so it essentially finds the most nested and then loops its way through from the middle-out - fantastic
+
+// Another valid solution using a counter
+function validParentheses(parens){
+  var n = 0;
+  for (var i = 0; i < parens.length; i++) {
+    if (parens[i] == '(') n++;
+    if (parens[i] == ')') n--;
+    // this final if ensures that no right parens can come before a left parens - very clever
+    if (n < 0) return false;
+  }
+  
+  return n == 0;
+}
