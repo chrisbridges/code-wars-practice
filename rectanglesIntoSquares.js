@@ -19,3 +19,11 @@ function sqInRect(lng, wdth){
 }
 
 // if you weren't supposed to return null if the initial arguments equal each other, I'd like to do this recursively
+// found this - really like it
+function sqInRect(a, b, initial = true){
+  if (a === b) { return initial ? null : [a] }  
+  const min = Math.min(a, b)
+  const max = Math.max(a, b)
+    
+  return [min, ...sqInRect(max - min, min, false)]
+}
