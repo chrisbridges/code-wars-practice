@@ -17,3 +17,5 @@ function sqInRect(lng, wdth){
   result.push(lng)
   return result
 }
+
+// if you weren't supposed to return null if the initial arguments equal each other, I'd like to do this recursively
