@@ -12,13 +12,10 @@ var sum_pairs=function(ints, s) {
   if (potentialResults.length === 0) {
     return undefined
   }
-  const indexOfProperResult = resultIndexes.reduce((lowest, value) => {
+  const properResult = resultIndexes.reduce((lowest, value) => {
     const maxIndexLowest = Math.max(...lowest)
     const maxIndexValue = Math.max(...value)
     return maxIndexLowest < maxIndexValue ? lowest : value
   })
-  // need to pass findIndex a function
-  return potentialResults[potentialResults.findIndex(indexOfProperResult)]
+  return [ints[properResult[0]], ints[properResult[1]]]
 }
-
-console.log(sum_pairs([1, 4, 8, 7, 3, 15], 5))
