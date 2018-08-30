@@ -1,0 +1,24 @@
+var sum_pairs=function(ints, s) {
+  const potentialResults = []
+  const resultIndexes = []
+  for (let i = 0; i < ints.length - 1; i++) {
+    for (let j = i + 1; j < ints.length; j++) {
+      if (ints[i] + ints[j] === s) {
+        potentialResults.push([ints[i], ints[j]])
+        resultIndexes.push([i, j])
+      }
+    }
+  }
+  if (potentialResults.length === 0) {
+    return undefined
+  }
+  const indexOfProperResult = resultIndexes.reduce((lowest, value) => {
+    const maxIndexLowest = Math.max(...lowest)
+    const maxIndexValue = Math.max(...value)
+    return maxIndexLowest < maxIndexValue ? lowest : value
+  })
+  // need to pass findIndex a function
+  return potentialResults[potentialResults.findIndex(indexOfProperResult)]
+}
+
+console.log(sum_pairs([1, 4, 8, 7, 3, 15], 5))
