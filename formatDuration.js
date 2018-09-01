@@ -39,10 +39,15 @@ function formatDuration (seconds) {
   }
   console.log(timeArray)
   if (timeArray.length > 2) {
-    for (let i = 0; i < timeArray.length - 2; i++) {
-      timeArray[i] = `${timeArray[i]}, ${timeArray[i + 1]}`
+    let timesWithCommas = ''
+    for (let i = 0; i < timeArray.length - 1; i++) {
+      if (i < timeArray.length - 2) {
+        timesWithCommas += `${timeArray[i]}, `
+      } else {
+        timesWithCommas += `${timeArray[i]} and ${timeArray[i + 1]}`
+      }
     }
-    return timeArray.join(' and ')
+    return timesWithCommas
   } else {
     return timeArray.join(' and ')
   } 
