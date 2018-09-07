@@ -17,3 +17,5 @@ function doneOrNot(board){
     }
     
   }
+
+  // this comment is important
