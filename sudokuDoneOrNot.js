@@ -5,18 +5,23 @@ function doneOrNot(board){
     function contains1through9 (arr) {
       for (let i = 1; i <= 9; i++) {
         if (!arr.includes(i)) {
-          return false
+          return 'Try again!'
         }
       }
     }
     
     const blockArrays = []
     
+    while (blockArrays.length < 10) {
+      blockArrays.push([])
+    }
+
+    
     for (let i = 0; i < board.length; i++) {
-      
+      contains1through9(board[i])
+      for (let j = 0; j < i.length; j++) {
+        
+      }
     }
     
   }
-
-  // this comment is important
-  // so is this one
