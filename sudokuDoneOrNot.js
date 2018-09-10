@@ -20,7 +20,17 @@ function doneOrNot(board){
     for (let i = 0; i < board.length; i++) {
       contains1through9(board[i])
       for (let j = 0; j < i.length; j++) {
-        
+        if (i < 3) {
+          if (j < 3) {
+          
+          }
+          else if (j < 6) {
+          
+          }
+          else {
+          
+          }
+        }
       }
     }
     
