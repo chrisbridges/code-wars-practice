@@ -1,7 +1,7 @@
 function doneOrNot(board){
   // loop board arrays and check that all includes 1 through 9
   // create new arrays out of "blocks" and run through same func
-  
+  // need  to find a way to segmnet blocks without unnecessary loops through array
     function contains1through9 (arr) {
       for (let i = 1; i <= 9; i++) {
         if (!arr.includes(i)) {
