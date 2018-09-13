@@ -15,7 +15,7 @@ function moveZeros (arr) {
 //     slice array until that index
 }
 
-// I like this one
+// I like this one 
 var moveZeros = function (arr) {
   var filtedList = arr.filter(function (num){return num !== 0;});
   var zeroList = arr.filter(function (num){return num === 0;});
