@@ -21,3 +21,4 @@ var moveZeros = function (arr) {
   var zeroList = arr.filter(function (num){return num === 0;});
   return filtedList.concat(zeroList);
 }
+
