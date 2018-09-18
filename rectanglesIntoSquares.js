@@ -27,4 +27,3 @@ function sqInRect(a, b, initial = true){
     
   return [min, ...sqInRect(max - min, min, false)]
 }
-
