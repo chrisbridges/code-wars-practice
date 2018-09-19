@@ -18,3 +18,4 @@ function incrementString (strng) {
   }
   return originalString + incrementedNumberString
 }
+
