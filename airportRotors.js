@@ -10,9 +10,21 @@ var flapDisplay = function(lines, rotors) {
 
 // lines is an array with a single value
   const splitLines = lines[0].split('')
-  splitLines.forEach(lineValue => {
-    indexOfLineValue = rotorValues.indexOf(lineValue)
+  const lastIndexOfRotorValues = rotorValues.length - 1
+  splitLines.forEach((lineValue, index) => {
+    const indexOfLineValue = rotorValues.indexOf(lineValue)
     console.log(indexOfLineValue)
+    let numberOfCharsToMoveForward = rotors[0][index]
+//     probably put this in a while loop in case of any really large rotor values
+    if (indexOfLineValue + numberOfCharsToMoveForward > lastIndexOfRotorValues) {
+      numberOfCharsToMoveForward = lastIndexOfRotorValues - indexOfLineValue
+      console.log(numberOfCharsToMoveForward)
+      
+    }
+    lineValue = rotorValues[indexOfLineValue + numberOfCharsToMoveForward]
+    console.log(lineValue)
+    splitLines[index] = lineValue
   })
-  return lines
+  console.log(splitLines)
+  return splitLines
 }
