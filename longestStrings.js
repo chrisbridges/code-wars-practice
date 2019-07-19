@@ -21,6 +21,7 @@
 
 // Array of the longest strings, stored in the same order as in the inputArray.
 
+// basic solution, but could probably be optimized because it loops through the array twice
 function longestStrings (strings) {
   let longestStringLength = 0
   for (let i = 0; i < strings.length; i++) {
@@ -29,3 +30,4 @@ function longestStrings (strings) {
   return strings.filter(string => string.length === longestStringLength)
 }
 
+// could sort the array first and then take every index from a certain point?
