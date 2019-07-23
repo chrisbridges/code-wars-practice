@@ -28,9 +28,4 @@ function removeIndex (arr, index) {
 }
 
 console.log(`${productOfAllOthers([3, 2, 1])} should equal [2, 3, 6]`)
-console.log(`${productOfAllOthers([1, 2, 3, 4,5])} should equal [120, 60, 40, 30, 24]`)
-
-function productOfAllOthersMap (arr) {
-  // looping over an array and return a new array based on the original values - classic map foo!
-}
-
+console.log(`${productOfAllOthers([1, 2, 3, 4, 5])} should equal [120, 60, 40, 30, 24]`)
