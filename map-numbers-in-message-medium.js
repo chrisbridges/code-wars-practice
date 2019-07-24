@@ -9,5 +9,5 @@
 // Notes:
   // you know that for every number, you can use letters for 1-9 and iterate a letter for every digit
   // since the largest possible combination would be 2 numbers combined, for every 2 numbers you could combine and then iterate as well as every possible combination
+    // but only if that first number is a 1 or 2, and only if the following number is 1 - 6
 
-  
