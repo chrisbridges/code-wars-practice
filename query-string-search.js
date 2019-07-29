@@ -10,7 +10,6 @@
 // First pass through, just to get something working:
 function search (query, set) {
   // query consists of starting letters, so don't have to worry about matches in middle of word
-  console.log(query, typeof query)
   const queryLength = query.length
   return set.filter(word => word.substring(0, queryLength) === query)
 }
@@ -19,3 +18,5 @@ console.log(search('de', ['dog', 'deer', 'deal']), 'should return [deer, deal]')
 console.log(search('ch', ['chow', 'charmander', 'cat']), 'should return [chow, charmander]')
 console.log(search('b', ['boss', 'bat', 'cat']), 'should return [boss, bat]')
 
+// while this works, I imagine the heart of the problem is how you would query for data over a much larger data set...
+  // that I'm not sure
